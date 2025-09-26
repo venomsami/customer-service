@@ -1,16 +1,52 @@
-# React + Vite
+## 1\. What is JSX, and why is it used?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**JSX (JavaScript XML)** is a syntax extension that allows you to write **HTML-like code** directly within your JavaScript files.
 
-Currently, two official plugins are available:
+It's used because it makes UI code **declarative** and readable, letting you describe the structure of your component in a familiar way while combining the power of JavaScript logic with markup.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-----
 
-## React Compiler
+## 2\. What is the difference between State and Props?
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Concept | State | Props (Properties) |
+| :--- | :--- | :--- |
+| **Source** | **Internal data** managed *within* a component. | **External data** passed *from* a parent component. |
+| **Mutabilty** | **Mutable** (can be changed) using a setter function (`useState`). | **Immutable** (read-only); *cannot* be changed by the child component. |
+| **Purpose** | Managing data that **changes** (e.g., counter, form input). | Passing data and **configuration** down the component tree. |
 
-## Expanding the ESLint configuration
+-----
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 3\. What is the `useState` hook, and how does it work?
+
+The **`useState` hook** is a function that lets you add and manage **state** in functional components.
+
+It works by:
+
+1.  Accepting an **initial state value** as an argument.
+2.  Returning an array with two elements: the **current state value** and a **setter function** to update that value.
+3.  Calling the setter function **triggers a re-render** of the component with the new state.
+
+-----
+
+## 4\. How can you share state between components in React?
+
+The primary way to share state between sibling or distant components is by **Lifting State Up**:
+
+1.  Move the state to the **closest common parent component**.
+2.  The parent passes the state (for reading) and the setter function (for updating) down to the children as **props**.
+
+For complex, application-wide state, you would use the **Context API** or a dedicated state management library like **Redux**.
+
+-----
+
+## 5\. How is event handling done in React?
+
+Event handling in React is similar to standard HTML but uses **camelCase** for event names (e.g., `onClick`, not `onclick`).
+
+You pass a **JavaScript function** as the handler to the element:
+
+```jsx
+<button onClick={handleClick}>Click</button> 
+```
+
+React uses a **SyntheticEvent** wrapper to ensure event behavior is consistent across all browsers.
