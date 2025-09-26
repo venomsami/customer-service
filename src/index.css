@@ -1,0 +1,55 @@
+/* Global reset + tokens */
+:root{
+  --bg:#f6f7f9;
+  --panel:#ffffff;
+  --text:#0e1116;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --purple:#6d4aff;
+  --green:#17c964;
+  --danger:#ef4444;
+  --warn:#f59e0b;
+  --radius:14px;
+  --container:1120px;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, system-ui;
+}
+
+/* Utilities */
+.container{width:min(var(--container),92vw); margin-inline:auto}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.65rem .9rem; border-radius:10px; border:1px solid transparent;
+  background:var(--panel); color:var(--text); cursor:pointer; font-weight:600;
+  transition:box-shadow .15s, transform .05s, background .2s, border-color .2s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn--primary{background:var(--purple); color:#fff}
+.btn--ghost{background:transparent; border-color:var(--border); color:var(--text)}
+.btn--success{background:var(--green); color:#fff}
+
+.chip{
+  display:inline-flex; align-items:center; padding:.2rem .55rem; border-radius:999px;
+  font-size:.75rem; border:1px solid var(--border); color:var(--muted); background:#f9fafb;
+}
+.chip--open{color:#10b981; border-color:#a7f3d0; background:#ecfdf5}
+.chip--in_progress{color:#b45309; border-color:#fde68a; background:#fffbeb}
+.chip--resolved{color:#2563eb; border-color:#bfdbfe; background:#eff6ff}
+
+.prio{font-weight:700}
+.prio--high{color:var(--danger)}
+.prio--medium{color:var(--warn)}
+.prio--low{color:#16a34a}
+
+/* Layout (App) */
+.main-grid{
+  display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:start;
+}
+@media (max-width:1024px){
+  .main-grid{grid-template-columns:1fr}
+}

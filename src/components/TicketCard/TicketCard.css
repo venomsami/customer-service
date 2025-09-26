@@ -1,0 +1,11 @@
+.ticket{
+  background:var(--panel); border:1px solid var(--border); border-radius:12px;
+  padding:14px 14px 12px; box-shadow:0 4px 18px rgba(0,0,0,.04);
+}
+.ticket__row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.ticket__title{margin:0; font-size:1rem}
+.ticket__desc{margin:.35rem 0 .6rem; color:var(--muted)}
+.ticket__meta{
+  display:flex; flex-wrap:wrap; gap:.7rem 1rem; font-size:.83rem; color:#4b5563;
+}
+.ticket__actions{margin-top:.8rem; display:flex; justify-content:flex-end}
