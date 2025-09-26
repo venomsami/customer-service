@@ -4,7 +4,7 @@
 }
 
 .stat{
-  min-height:140px; border-radius:var(--radius); color:#fff; padding:24px;
+  min-height:140px; border-radius:var(--radius); color:#fff; padding:24px; /*color added*/
   display:flex; flex-direction:column; justify-content:center; overflow:hidden; position:relative;
 }
 .stat::after{
