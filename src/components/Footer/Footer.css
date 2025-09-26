@@ -3,7 +3,7 @@
   display:grid; gap:24px; grid-template-columns:2fr repeat(4, 1fr);
   padding:28px 0;
 }
-.footer__brand h4{margin:0 0 8px}
+.footer__brand h4{margin:0 0 8px} /*margin*/
 .footer__brand p{color:#a1a1aa; margin:0}
 .footer__title{font-weight:800; margin-bottom:10px}
 .footer a{display:block; color:#d1d5db; text-decoration:none; margin:.3rem 0}
